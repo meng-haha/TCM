@@ -47,7 +47,7 @@ class GraphConvolutionSparse(tf.keras.layers.Layer):
         x = tf.sparse.sparse_dense_matmul(adj, x_dense)
         x = tf.matmul(x, self.weight)
 
-        # 输出的样式是什么？
+        
         return self.activation(x)
 
 
@@ -68,6 +68,7 @@ class BilinearDecoder(tf.keras.layers.Layer):
         # 展平成一维
         logits=tf.reshape(x,[-1])
         return logits
+
 
 
 
